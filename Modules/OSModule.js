@@ -1,4 +1,4 @@
-const os = require('os');
+const os = require('os'); 
 
 let totalMemory = os.totalmem();
 let freeMemory = os.freemem();
