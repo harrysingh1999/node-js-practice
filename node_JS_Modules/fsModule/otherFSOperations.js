@@ -1,3 +1,4 @@
+import { watch } from 'fs';
 import fs from 'fs/promises'
 
 
@@ -5,7 +6,9 @@ import fs from 'fs/promises'
 // fs.rename("script.js", "app.js");
 // fs.rename("app.js", "C:\\Users\\anura\\OneDrive\\Desktop\\script.js
 
-fs.rename('node_JS_Modules/fsModule/OtherFSOperations.js', 'node_JS_Modules/fsModule/otherFSOperations.js')
+// fs.rename('node_JS_Modules/fsModule/OtherFSOperations.js', 'node_JS_Modules/fsModule/otherFSOperations.js')
+
+// fs.writeFile('file.txt', 'this')
 
 // fs.rename('Modules', 'modules')
 
@@ -24,3 +27,11 @@ fs.rename('node_JS_Modules/fsModule/OtherFSOperations.js', 'node_JS_Modules/fsMo
 // fs.rm("src", { recursive: true }); // to delete a folder/directory with all its content recursively...........
 
 // appendFile('styles.css', '')
+
+// watch method is used to watch a file for changes, and it will give us the eventType of the change, we can use this to perform some action when a file is changed
+// we used normal fs async method here instead of promises due to its complicated behaviour in watch approach............................
+
+// watch("node_JS_Modules/fsModule/file.txt", async (eventType) => {
+// if (eventType === "change") {
+// console.log(await fs.readFile("node_JS_Modules/fsModule/file.txt", "utf-8"));
+// }});
