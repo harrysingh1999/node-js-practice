@@ -3,11 +3,12 @@ import { totalMemory, freeMemory } from "./moduleSystem/ES6Module/OSModule.js"; 
 import name from 'math.js'
 // console.log(log,'log');
 
-console.log(totalMemory,'totalMemory');
-const meta = import.meta;
-console.log('import meta', meta)
-// console.log(url);
+// console.log(totalMemory,'totalMemoryae  efwwfe');
+// const meta = import.meta;
+// // console.log('import meta', meta)
+// // console.log(url);
 
-// log('accessing log from logger module in App module')
+// // log('accessing log from logger module in App module')
 
-console.log(name)
+// console.log(name)
+

@@ -1,0 +1,16 @@
+# Microtask Queue
+
+- Promises
+
+# Async callbacks Priority of Event Queue
+
+1. Timers - settimeouts, setImmediate etc..........
+2. pending Callbacks - executes I/O callbacks that left in previous event loop iterations..........
+3. idle, prepare - they are for internal purposes only for libuv,
+4. poll - retrieve new I/O events, execute I/O related callbacks except close callbacks these are cleanup callbacks, used
+for Optimization purposes only so they can wait for sometime to get urgent ones executed.
+5. check: setImmediate callbacks by timers are invoked here..
+6. close callbacks - Used for Optimization and to close some connections generally schdeuled by timers,
+ e.g. socket.on('close')
+
+ Note Microtask queue has the highest prirotity even more than Event Queue.................
