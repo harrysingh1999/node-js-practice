@@ -1,0 +1,33 @@
+// Express is a Framework of Node.js, used to simplify web development with more features and tools...................
+
+import express from 'express'
+
+const server = express()
+
+// Order of MiddleWares Matters.................................
+// Can't call next() after send().............................
+// Calling res.send implicityly calls res.end().............................
+// '/' Matches every request............................................
+// server.use() is not strict, but server.get() and .post() are strict and handles only those request that comes from
+// those url which they are handling, by putting get and post you are specifictly telling server to only respond to that method type request only.................................
+
+
+server.get('/', (req, res, next) => {  // It is a MiddleWare......................................
+  console.log('came in first middleware', req.originalUrl)
+  next()
+})
+
+server.get('/test', (req, res, next) => {   
+// req.originalUrl → the full URL the client requested (/test/users......................................
+// req.url → the URL relative to the current mounted middleware (/users)..............................
+// req.baseUrl → the mount path that was stripped (/test).......................................
+
+  console.log('came in second middleware', req.originalUrl)
+  next()
+  res.send('<p>Hello response has been sent by second middleware</p>')
+})
+
+server.listen('3002', () => {
+  console.log(`Server is running on port http://localhost:3002`)
+})
+
